@@ -3,3 +3,10 @@ CMakeFiles
 Makefile
 cmake_install.cmake
 install_manifest.txt
+build/
+dna-compression.config
+dna-compression.creator
+dna-compression.creator.user
+dna-compression.files
+dna-compression.includes
+
