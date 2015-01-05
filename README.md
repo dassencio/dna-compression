@@ -18,3 +18,8 @@ the following commands in sequence:
 
 	cmake ..
 	make
+
+Contributors & Contact Information
+==================================
+
+Diego Assencio / diego@assencio.com
