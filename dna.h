@@ -112,5 +112,4 @@ private:
 	size_t   m_len;
 };
 
-
 #endif /* __dna_h__ */
