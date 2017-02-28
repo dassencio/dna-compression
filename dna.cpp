@@ -5,9 +5,6 @@
 #include "dna.h"
 
 
-using namespace std;
-
-
 /**
  * @brief returns a random DNA sequence with length in the range [1,20]
  */
@@ -15,14 +12,14 @@ char* random_dna ()
 {
 	static const char base_array[] = { 'A', 'C', 'G', 'T' };
 
-	random_device device;
-	mt19937 gen(device());
+	std::random_device device;
+	std::mt19937 gen(device());
 
 	/* random DNA length generator */
-	uniform_int_distribution<> dis_len(1,20);
+	std::uniform_int_distribution<> dis_len(1,20);
 
 	/* random DNA base generator */
-	uniform_int_distribution<> dis_dna(0,3);
+	std::uniform_int_distribution<> dis_dna(0,3);
 
 	/* select the DNA sequence length */
 	size_t dna_len = dis_len(gen);
@@ -48,12 +45,12 @@ int main ()
 
 	const char* dna_str2 = dna.to_string();
 
-	cout << "original sequence: " << dna_str  << endl;
-	cout << "stored sequence  : " << dna_str2 << endl;
+	std::cout << "original sequence: " << dna_str  << std::endl;
+	std::cout << "stored sequence  : " << dna_str2 << std::endl;
 
-	int result = strcmp(dna_str, dna_str2);
+	int result = std::strcmp(dna_str, dna_str2);
 
-	cout << "output is correct: " << boolalpha << (result == 0) << endl;
+	std::cout << "output is correct: " << std::boolalpha << (result == 0) << std::endl;
 
 	delete[] dna_str;
 	delete[] dna_str2;
