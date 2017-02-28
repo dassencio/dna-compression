@@ -16,20 +16,20 @@ char* random_dna ()
 	std::mt19937 gen(device());
 
 	/* random DNA length generator */
-	std::uniform_int_distribution<> dis_len(1,20);
+	std::uniform_int_distribution<> length_chooser(1,20);
 
 	/* random DNA base generator */
-	std::uniform_int_distribution<> dis_dna(0,3);
+	std::uniform_int_distribution<> base_chooser(0,3);
 
 	/* select the DNA sequence length */
-	size_t dna_len = dis_len(gen);
+	size_t dna_len = length_chooser(gen);
 
 	char* dna_str = new char[dna_len+1];
 
 	/* build the DNA sequence */
 	for (size_t i = 0; i < dna_len; i++)
 	{
-		dna_str[i] = base_array[dis_dna(gen)];
+		dna_str[i] = base_array[base_chooser(gen)];
 	}
 
 	dna_str[dna_len] = '\0';
