@@ -15,8 +15,8 @@ char* random_dna ()
 {
 	static const char base_array[] = { 'A', 'C', 'G', 'T' };
 
-	random_device rd;
-	mt19937 gen(rd());
+	random_device device;
+	mt19937 gen(device());
 
 	/* random DNA length generator */
 	uniform_int_distribution<> dis_len(1,20);
