@@ -4,7 +4,6 @@
 
 #include "dna.h"
 
-
 /**
  * @brief returns a random DNA sequence with length in the range [1,20]
  */

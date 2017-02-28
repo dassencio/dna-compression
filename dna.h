@@ -1,10 +1,8 @@
 #ifndef __dna_h__
 #define __dna_h__
 
-
 #include <stdexcept>	/* std::invalid_argument */
 #include <cstring>	/* std::memset */
-
 
 #define BASE_MASK 0x3	/* binary: 11 */
 
