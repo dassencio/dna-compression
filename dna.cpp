@@ -40,7 +40,7 @@ int main ()
 {
 	const char* dna_str = random_dna();
 
-	dna_bitset dna(dna_str, strlen(dna_str));
+	dna_bitset dna(dna_str, std::strlen(dna_str));
 
 	const char* dna_str2 = dna.to_string();
 
