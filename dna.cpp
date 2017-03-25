@@ -45,7 +45,7 @@ int main ()
 	const char* dna_str2 = dna.to_string();
 
 	std::cout << "original sequence: " << dna_str  << std::endl;
-	std::cout << "stored sequence  : " << dna_str2 << std::endl;
+	std::cout << "restored sequence: " << dna_str2 << std::endl;
 
 	int result = std::strcmp(dna_str, dna_str2);
 

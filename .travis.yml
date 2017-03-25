@@ -1,0 +1,24 @@
+language: cpp
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+    - os: osx
+
+git:
+  depth: 3
+
+script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
+  - for i in $(seq 1 100); do ./dna; done
+
+notifications:
+  email:
+    recipients:
+      - diego@assencio.com
+    on_success: change
+    on_failure: always
