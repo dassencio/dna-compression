@@ -3,20 +3,23 @@
 Description
 ===========
 
-A simple example showing how DNA data can be efficiently stored in C++.
+This project is a simple example which shows how DNA data can be efficiently
+stored in C++. It implements the algorithm described
+[here](http://diego.assencio.com/?index=79a3928625303f53593f2112ebd8ac86).
 
 
 License
 =======
 
-All code from this project is licensed under the GPLv3. See `LICENSE` for more.
+All code from this project is licensed under the GPLv3. See the `LICENSE` file
+for more information.
 
 
-Instructions
-============
+Usage instructions
+==================
 
-To compile the project, create a subdirectory called `build`, cd into it and run
-the following commands in sequence:
+To compile the project, create a subdirectory called `build` and run the
+following commands inside it:
 
 	cmake ..
 	make
@@ -28,7 +31,7 @@ characters. If the recovered sequence differs from the original one, the test
 fails.
 
 
-Contributors & Contact Information
+Contributors & contact information
 ==================================
 
 Diego Assencio / diego@assencio.com
