@@ -38,21 +38,21 @@ char* random_dna ()
 
 int main ()
 {
-	const char* dna_str = random_dna();
+	const char* dna_str_original = random_dna();
 
-	dna_bitset dna(dna_str, std::strlen(dna_str));
+	dna_bitset dna(dna_str_original, std::strlen(dna_str_original));
 
-	const char* dna_str2 = dna.to_string();
+	const char* dna_str_recovered = dna.to_string();
 
-	std::cout << "original sequence: " << dna_str  << std::endl;
-	std::cout << "restored sequence: " << dna_str2 << std::endl;
+	std::cout << "original sequence : " << dna_str_original  << "\n";
+	std::cout << "recovered sequence: " << dna_str_recovered << "\n";
 
-	int result = std::strcmp(dna_str, dna_str2);
+	int result = std::strcmp(dna_str_original, dna_str_recovered);
 
-	std::cout << "output is correct: " << std::boolalpha << (result == 0) << std::endl;
+	std::cout << (result == 0 ? "test passed" : "test failed") << "\n";
 
-	delete[] dna_str;
-	delete[] dna_str2;
+	delete[] dna_str_original;
+	delete[] dna_str_recovered;
 
 	return result;
 }
