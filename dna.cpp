@@ -40,7 +40,7 @@ int main ()
 {
 	const char* dna_str_original = random_dna();
 
-	dna_bitset dna(dna_str_original, std::strlen(dna_str_original));
+	DnaBitset dna(dna_str_original, std::strlen(dna_str_original));
 
 	const char* dna_str_recovered = dna.to_string();
 

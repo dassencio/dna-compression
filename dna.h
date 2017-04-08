@@ -15,7 +15,7 @@ enum
 	BASE_T = 0x3,	/* binary: 11 */
 };
 
-class dna_bitset
+class DnaBitset
 {
 public:
 	/**
@@ -23,7 +23,7 @@ public:
 	 * @param dna_str a string containing a DNA sequence (e.g. "ATGCA...")
 	 * @param dna_len length of the DNA sequence
 	 */
-	dna_bitset (const char* dna_str, const size_t dna_len)
+	DnaBitset(const char* dna_str, const size_t dna_len)
 	{
 		m_len = dna_len;
 
@@ -64,7 +64,7 @@ public:
 	/**
 	 * @brief destructor
 	 */
-	~dna_bitset ()
+	~DnaBitset()
 	{
 		delete[] m_data;
 	}
@@ -72,7 +72,7 @@ public:
 	/**
 	 * @brief returns the stored DNA sequence as a string
 	 */
-	char* to_string () const
+	char* to_string() const
 	{
 		char* dna_str = new char[m_len+1];
 
