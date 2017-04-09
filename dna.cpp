@@ -54,5 +54,5 @@ int main ()
 	delete[] dna_str_original;
 	delete[] dna_str_recovered;
 
-	return result;
+	return (result == 0 ? EXIT_SUCCESS : EXIT_FAILURE);
 }
