@@ -11,8 +11,9 @@ stored in C++. It implements the algorithm described
 License
 =======
 
-All code from this project is licensed under the GPLv3. See the `LICENSE` file
-for more information.
+All code from this project is licensed under the GPLv3. See the
+[`LICENSE`](https://github.com/dassencio/dna-compression/tree/master/LICENSE)
+file for more information.
 
 
 Usage instructions
