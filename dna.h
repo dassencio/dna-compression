@@ -1,27 +1,27 @@
 #ifndef __dna_h__
 #define __dna_h__
 
-#include <stdexcept>	/* std::invalid_argument */
-#include <cstring>	/* std::memset */
+#include <cstring>     /* std::memset */
+#include <stdexcept>   /* std::invalid_argument */
 
-#define BASE_MASK 0x3	/* binary: 11 */
+#define BASE_MASK 0x3   /* binary: 11 */
 
 /* useful constants */
 enum
 {
-	BASE_A = 0x0,	/* binary: 00 */
-	BASE_C = 0x1,	/*'binary: 01 */
-	BASE_G = 0x2,	/* binary: 10 */
-	BASE_T = 0x3,	/* binary: 11 */
+	BASE_A = 0x0,   /* binary: 00 */
+	BASE_C = 0x1,   /* binary: 01 */
+	BASE_G = 0x2,   /* binary: 10 */
+	BASE_T = 0x3,   /* binary: 11 */
 };
 
 class DnaBitset
 {
 public:
 	/**
-	 * @brief constructor
-	 * @param dna_str a string containing a DNA sequence (e.g. "ATGCA...")
-	 * @param dna_len length of the DNA sequence
+	 * @brief Constructs a compressed representation of a DNA sequence.
+	 * @param dna_str A string holding a DNA sequence (e.g. "ATGCACG").
+	 * @param dna_len The length of the DNA sequence.
 	 */
 	DnaBitset(const char* dna_str, const size_t dna_len)
 	{
@@ -35,7 +35,7 @@ public:
 		std::memset(m_data, 0, dna_bytes);
 
 		/* for each base of the DNA sequence */
-		for (size_t i = 0; i < dna_len; i++)
+		for (size_t i = 0; i < dna_len; ++i)
 		{
 			uint8_t shift = 6 - 2*(i % 4);
 
@@ -62,7 +62,7 @@ public:
 	}
 
 	/**
-	 * @brief destructor
+	 * @brief Destructor.
 	 */
 	~DnaBitset()
 	{
@@ -70,14 +70,14 @@ public:
 	}
 
 	/**
-	 * @brief returns the stored DNA sequence as a string
+	 * @brief Returns the stored DNA sequence as an ASCII string.
 	 */
 	char* to_string() const
 	{
 		char* dna_str = new char[m_len+1];
 
 		/* for each base of the DNA sequence */
-		for (size_t i = 0; i < m_len; i++)
+		for (size_t i = 0; i < m_len; ++i)
 		{
 			uint8_t shift = 6 - 2*(i % 4);
 

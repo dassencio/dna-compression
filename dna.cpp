@@ -1,11 +1,11 @@
-#include <iostream>
 #include <cstring>
+#include <iostream>
 #include <random>
 
 #include "dna.h"
 
 /**
- * @brief returns a random DNA sequence with length in the range [1,20]
+ * @brief Generates a random DNA sequence with length in the range [1,20].
  */
 char* random_dna ()
 {
@@ -15,10 +15,10 @@ char* random_dna ()
 	std::mt19937 generator(device());
 
 	/* random DNA length generator */
-	std::uniform_int_distribution<> length_chooser(1,20);
+	std::uniform_int_distribution<int> length_chooser(1,20);
 
 	/* random DNA base generator */
-	std::uniform_int_distribution<> base_chooser(0,3);
+	std::uniform_int_distribution<int> base_chooser(0,3);
 
 	/* select the DNA sequence length */
 	size_t dna_len = length_chooser(generator);
@@ -26,7 +26,7 @@ char* random_dna ()
 	char* dna_str = new char[dna_len+1];
 
 	/* build the DNA sequence */
-	for (size_t i = 0; i < dna_len; i++)
+	for (size_t i = 0; i < dna_len; ++i)
 	{
 		dna_str[i] = base_array[base_chooser(generator)];
 	}
