@@ -80,9 +80,10 @@ public:
         for (size_t i = 0; i < m_len; ++i)
         {
             uint8_t shift = 6 - 2 * (i % 4);
+            uint8_t mask = BASE_MASK << shift;
 
             /* get the i-th DNA base */
-            uint8_t base = (m_data[i / 4] & (BASE_MASK << shift)) >> shift;
+            uint8_t base = (m_data[i / 4] & mask) >> shift;
 
             switch (base)
             {
