@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.com/dassencio/dna-compression.svg?branch=master)](https://travis-ci.com/dassencio/dna-compression)
+![Functional tests](https://github.com/dassencio/dna-compression/workflows/Functional%20tests/badge.svg)
 
 # Description
 

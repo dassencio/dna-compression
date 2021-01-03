@@ -1,0 +1,34 @@
+name: Functional tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build-and-test:
+    name: Build and test
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build functional tests
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        make
+
+    - name: Run functional tests
+      run: |
+        cd build
+        for i in {1..100}
+        do
+          ./dna
+        done
